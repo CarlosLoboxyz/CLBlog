@@ -5,3 +5,7 @@
 {{ if .Param "math" }}
 {{ partial "mathjax-support.html" }}
 {{ end}}
+
+{{ if (findRE "<pre" .Content 1) }}
+    <script src="/js/copy-code-button.js"></script>
+{{ end }}
