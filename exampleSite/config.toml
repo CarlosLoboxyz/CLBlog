@@ -16,6 +16,6 @@ theme = "CLBlog"
 		weight = 100
 
 [markup]
-	[[markup.highlight]]
-		lineNos = True
-		lineNumbersInTable = True
+	[markup.highlight]
+		lineNos = true
+		lineNumbersInTable = true
