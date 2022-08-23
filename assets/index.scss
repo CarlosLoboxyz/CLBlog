@@ -116,3 +116,19 @@ h1, h2, h3, h4, h5, h6 {
 .code-block {
   margin-top: 15px;
 }
+
+table {
+  table-layout:fixed;
+  border-collapse:collapse;
+  width:100%;
+  margin:40px 0;
+}
+
+table, td, th {
+  border: 1px solid var(--fg);
+  padding: 10px;
+}
+
+th {
+  color: var(--fg);
+}
