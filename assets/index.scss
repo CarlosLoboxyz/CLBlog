@@ -23,9 +23,12 @@ body {
   background-color: var(--bg);
   font-size: 125%;
   line-height: 1.5;
-  max-width: 45rem;
-  padding: 1rem;
   margin: 0 auto;
+}
+
+main, nav, footer {
+  max-width: 45rem;
+  margin: auto; 
 }
 
 a {
@@ -39,9 +42,41 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--fg);
 }
 
-.site-nav {
+table {
+  table-layout:fixed;
+  border-collapse:collapse;
+  width:100%;
+  margin:40px 0;
+}
+
+table, td, th {
+  border: 1px solid var(--fg);
+  padding: 10px;
+}
+
+th {
+  color: var(--fg);
+}
+
+.cover {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.site-header {
+  nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+
+nav {
   display: flex;
   justify-content: space-between;
+  padding-top: 1rem;
   a {
     text-decoration: none;
     display: block;
@@ -56,6 +91,14 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+}
+
+.taglist {
+  display:block;
+  margin-bottom:20px;
+  a {
+    text-decoration: none;
   }
 }
 
@@ -115,20 +158,4 @@ h1, h2, h3, h4, h5, h6 {
 
 .code-block {
   margin-top: 15px;
-}
-
-table {
-  table-layout:fixed;
-  border-collapse:collapse;
-  width:100%;
-  margin:40px 0;
-}
-
-table, td, th {
-  border: 1px solid var(--fg);
-  padding: 10px;
-}
-
-th {
-  color: var(--fg);
 }

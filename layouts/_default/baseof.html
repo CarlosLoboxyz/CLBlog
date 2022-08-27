@@ -4,10 +4,21 @@
 	{{ partial "metadata.html" . }}
 </head>
 <body>
-	{{ partial "nav.html" . }}
+
+	{{ $featured_image := partial "get-page-cover.html" . }}
+	{{ if $featured_image }}
+	<div class="site-header">
+		{{ partial "nav.html" .}}			
+		<header class="cover" style="background-image: url('{{ $featured_image }}');"></header>
+	</div>
+	{{ else }}		
+		{{ partial "nav.html" .}}			
+	{{ end }}
+
 	<main>
-	{{ block "main" . }}{{ end }}
+		{{ block "main" . }}{{ end }}
 	</main>
+	
 	{{ partial "footer.html" . }}
 </body>
 </html>

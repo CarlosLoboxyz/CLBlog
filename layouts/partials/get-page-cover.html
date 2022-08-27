@@ -1,0 +1,21 @@
+{{/* 
+	Search and image given a certian pattern and process it by modifying the
+	brightness and applying a gaussianblur filter, finally return the link for
+	the final image in a webp format
+*/}}
+
+{{ $link_to_cover := "" }}
+{{ $matches := "cover" }}
+
+{{ with .Resources.ByType "image" }}
+	{{ with .GetMatch (printf "**{%s}*" $matches) }}
+		{{ 
+			$imgproc := 
+			.Resize (printf "%dx%d webp picture" .Width .Height) | 
+			images.Filter (images.Brightness -15) (images.GaussianBlur 5)
+		}}
+		{{ $link_to_cover = $imgproc.RelPermalink }}
+	{{ end }}
+{{ end }}
+
+{{ return $link_to_cover }}
