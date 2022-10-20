@@ -6,14 +6,9 @@
 <body>
 
 	{{ $featured_image := partial "get-page-cover.html" . }}
-	{{ if $featured_image }}
-	<div class="site-header">
-		{{ partial "nav.html" .}}			
-		<header class="cover" style="background-image: url('{{ $featured_image }}');"></header>
-	</div>
-	{{ else }}		
-		{{ partial "nav.html" .}}			
-	{{ end }}
+	<header {{ if ($featured_image) }}class="cover"{{ end }} {{ if ($featured_image) }}style="background-image: url('{{ $featured_image }}');"{{ end }}>
+		{{ partial "nav.html" .}}
+	</header>
 
 	<main>
 		{{ block "main" . }}{{ end }}
