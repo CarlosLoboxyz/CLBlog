@@ -3,7 +3,7 @@
 <head>
 	{{ partial "metadata.html" . }}
 </head>
-<body>
+<body class="animate">
 
 	{{ $featured_image := partial "get-page-cover.html" . }}
 	<header {{ if ($featured_image) }}class="cover"{{ end }} {{ if ($featured_image) }}style="background-image: url('{{ $featured_image }}');"{{ end }}>

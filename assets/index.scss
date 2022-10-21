@@ -163,7 +163,6 @@ nav {
     vertical-align: sub;
     fill: var(--theme-toggle-btn);
     // --ttb stands for toggle-theme-btn
-    transform: var(--ttb-rotation);
-    transform-origin: 50% 50%;
+    transform: var(--ttb-rotation) translateZ(0);
   }
 }
