@@ -1,9 +1,13 @@
 {{ define "main" }}
 
 <article>
-	<header>
+	<header {{ if .Scratch.Get "featured_image" }}class="post-header hero"{{ else }} class="post-header simple"{{ end }}>
 		<h1>{{ .Title }}</h1>
-		{{ partial "tags.html" . }}
+		<div class="post-metadata">
+			{{ partial "tags.html" . }}
+			-
+			<time datetime="{{ .Date.Format "2006-02-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+		</div>
 	</header>
 	{{ .Content }}
 </article>
