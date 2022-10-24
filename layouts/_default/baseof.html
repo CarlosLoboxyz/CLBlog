@@ -6,14 +6,14 @@
 <body class="animate">
 
 	{{ $featured_image := partial "get-page-cover.html" . }}
+	{{ if $featured_image }}
+		{{ .Scratch.Set "featured_image" true }}
+	{{ end }}
 	<header {{ if $featured_image }}class="cover"{{ end }} {{ if $featured_image }}style="background-image: url('{{ $featured_image }}');"{{ end }}>
 		{{ partial "nav.html" . }}
 	</header>
 
 	<main>
-		{{ if $featured_image }}
-			{{ .Scratch.Set "featured_image" true }}
-		{{ end }}
 		{{ block "main" . }}{{ end }}
 	</main>
 	

@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <article>
-	<header {{ if .Scratch.Get "featured_image" }}class="post-header hero"{{ else }} class="post-header simple"{{ end }}>
+	<header class="post-header {{ if .Scratch.Get "featured_image" }}hero{{ else }}simple{{ end }}">
 		<h1>{{ .Title }}</h1>
 		<div class="post-metadata">
 			{{ partial "tags.html" . }}
