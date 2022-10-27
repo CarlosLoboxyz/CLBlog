@@ -23,7 +23,8 @@
 body {
   color: var(--fg);
   background-color: var(--bg);
-  font-size: 125%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
   line-height: 1.5;
   margin: auto;
 }
@@ -98,6 +99,7 @@ nav {
   		li {
   	  		display: inline-block;
   	  		padding: 15px;
+  	  		list-style: none;
 		}
   	}
 	&.simple a { color: var(--fg); }
@@ -217,4 +219,43 @@ nav {
 			text-decoration: none;
 		}
 	}
+}
+
+footer {
+	text-align: center;
+	padding-bottom: 15px;
+	font-size: 16px;
+	a { text-decoration: none; }
+}
+
+
+.posts-list {
+	list-style: none;
+	* a {
+		text-decoration: none;
+	}
+ 	.post-card  {
+		display: flex;
+		align-items: stretch;
+		line-height: 50px;
+		margin-bottom: 30px;
+		border: dashed 2px var(--fg);
+		border-radius: 3px;
+		.post-body {
+			background: var(--bg);
+			text-align: justify;
+			padding: 15px;
+			margin: auto;
+			line-height: 22px;
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			.post-meta{
+				line-height: 22px;
+				padding-bottom: 10px;
+				h3 { margin: auto; }
+			}
+		}
+	}
+
 }

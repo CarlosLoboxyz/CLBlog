@@ -1,0 +1,21 @@
+{{ $image := partial "get-page-cover.html" . }}
+{{ $date := .Date.Format "Mon, Jan 2, 2006" }}
+
+<article class="post-card">
+	{{ if $image }}
+		<img class="post-preview" src="{{ partial "get-page-cover.html" . }}" width="180px">
+	{{ end }}
+	<div class="post-body">
+		<header>
+			<div class="post-meta">
+				<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+				<time datetime="{{ $date }}">{{ $date }}</time> - <i>{{ .ReadingTime }} Min. Read</i>
+			</div>
+		</header>
+		<div class="post-summary">
+			{{ .Summary }}...
+			<br>
+			<a href="{{ .Permalink }}"><nobr>Read More →</nobr></a>
+		</div>
+	</div>
+</article>

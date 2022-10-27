@@ -1,5 +1,10 @@
+{{ $year := dateFormat "2006" now }}
+
 <footer>
-	<p>&copy;{{ dateFormat "2006" now }} {{ .Site.Title }}</p>
+	<p>
+		<time datetime="{{ $year }}">&copy;{{ $year }}</time>
+		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+	</p>
 </footer>
 
 {{ if .Param "math" }}
