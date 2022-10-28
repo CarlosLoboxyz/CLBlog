@@ -85,7 +85,7 @@ nav {
   	font-size: 19px;
   	letter-spacing: -1px;
   	justify-content: space-between;
-  	@media screen and (max-width: 396px) {
+  	@media screen and (max-width: 506px) {
   		justify-content: center;
   	}
   	flex-wrap: wrap;
@@ -231,31 +231,44 @@ footer {
 
 .posts-list {
 	list-style: none;
-	* a {
-		text-decoration: none;
-	}
+	* a { text-decoration: none; }
+	padding-left: 40px;
+	padding-right: 40px;
  	.post-card  {
 		display: flex;
-		align-items: stretch;
-		line-height: 50px;
 		margin-bottom: 30px;
 		border: dashed 2px var(--fg);
 		border-radius: 3px;
+		.post-preview {
+			display: inherit;
+			width: 180px;
+		}
 		.post-body {
+			width: 100%;
 			background: var(--bg);
 			text-align: justify;
 			padding: 15px;
-			margin: auto;
 			line-height: 22px;
 			list-style: none;
-			display: flex;
-			flex-direction: column;
+			* { margin: 0 }
 			.post-meta{
-				line-height: 22px;
 				padding-bottom: 10px;
-				h3 { margin: auto; }
 			}
 		}
+		.post-action {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			line-height: 35px;
+			a {
+				margin-left: auto;
+			}
+		}
+  		@media screen and (max-width: 506px) {
+  			&.post-card {
+  				flex-wrap: wrap;
+  				a, img { flex: auto; }
+  			}
+  		}
 	}
-
 }

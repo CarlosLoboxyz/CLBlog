@@ -3,19 +3,21 @@
 
 <article class="post-card">
 	{{ if $image }}
-		<img class="post-preview" src="{{ partial "get-page-cover.html" . }}" width="180px">
+	<a class="post-preview" href="{{ .Permalink }}">
+		<img src="{{ $image }}" alt="" width="180px">
+	</a>
 	{{ end }}
 	<div class="post-body">
-		<header>
-			<div class="post-meta">
-				<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-				<time datetime="{{ $date }}">{{ $date }}</time> - <i>{{ .ReadingTime }} Min. Read</i>
-			</div>
-		</header>
+		<div class="post-meta">
+			<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+			<time datetime="{{ $date }}">{{ $date }}</time> - <i>{{ .ReadingTime }} Min. Read</i>
+		</div>
 		<div class="post-summary">
-			{{ .Summary }}...
-			<br>
-			<a href="{{ .Permalink }}"><nobr>Read More →</nobr></a>
+			<p>{{ .Summary }}...</p> <br>
+			<div class="post-action">
+				{{ partial "tags.html" . }}	
+				<a href="{{ .Permalink }}"><nobr>Read More →</nobr></a>
+			</div>
 		</div>
 	</div>
 </article>
